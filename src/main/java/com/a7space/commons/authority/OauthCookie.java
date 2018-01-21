@@ -7,7 +7,7 @@ import com.a7space.commons.utils.ConfigHelper;
 import com.a7space.commons.utils.ServletContext;
 import com.a7space.commons.utils.StringPatternUtil;
 import com.a7space.commons.utils.TokenUtil;
-
+import com.a7space.commons.utils.StringUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,6 +21,10 @@ public class OauthCookie {
 	 */
 	public static String getSid() {
 		HttpServletRequest request = ServletContext.getRequest();
+		String token = request.getParameter("oauth_token");
+		if(StringUtils.isNotBlank(token)){
+		  return token;
+		}
 		return getSid(request);
 	}
 
