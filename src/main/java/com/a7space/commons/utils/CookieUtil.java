@@ -75,7 +75,7 @@ public class CookieUtil {
         if (expire != null) {
             cookie.setMaxAge(expire.intValue());
         }
-        String domain = ServletUtil.getSecondLevelDomain();
+        String domain = ServletUtil.getDomain();
         if (StringUtils.isNotEmpty(domain)) {
             cookie.setDomain(domain);
         }

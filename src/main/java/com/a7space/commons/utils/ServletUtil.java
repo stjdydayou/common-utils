@@ -186,6 +186,10 @@ public class ServletUtil {
             return hostSplit[hostSplit.length - 2] + "." + hostSplit[hostSplit.length - 1];
         }
     }
+    public static String getDomain() {
+        String host = ServletContext.getRequest().getServerName();
+        return host;
+    }
 
     /**
      * Created on 2017年2月24日
